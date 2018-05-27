@@ -1,0 +1,5 @@
+---
+--- nginx-gateway 初始化配置
+--- Created by luochen.
+--- DateTime: 2018/5/28 1:22
+---
