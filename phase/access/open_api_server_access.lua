@@ -6,7 +6,7 @@
 
 -- 引入库
 print(package.path);
---local request_handler = require("handler.request_handler")
+local request_handler = require("example.handler.request_handler")
 --
 --
 --local request_method = ngx.var.request_method;
