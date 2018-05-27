@@ -7,7 +7,6 @@
 local _M = {}
 
     _M.init = function ()
-
         -- 获取请求头
         local request_header = require("helper.header_helper")
         request_header.get_custom_headers();
