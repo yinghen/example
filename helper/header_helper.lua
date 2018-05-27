@@ -7,7 +7,6 @@
 
 local _M = {}
 
-
     -- 所有的header
     _M.get_headers = function()
         local headers = ngx.req.get_headers()
