@@ -9,4 +9,6 @@ local request_method = ngx.var.request_method;
 
 ngx.log(ngx.INFO,"request method = ",request_method);
 
+ngx.say("hello world");
+
 
