@@ -27,9 +27,9 @@ local _M = {}
     _M.string_sep = function(obj)
         local length = string.len(obj);
         if length > LOG_VALUE_MAX_LENGTH then
-            return string.sub(data,1,LOG_VALUE_SEPARATE).."..."..string.sub(data,-1,-LOG_VALUE_SEPARATE)
+            return string.sub(obj,1,LOG_VALUE_SEPARATE).."..."..string.sub(obj,-1,-LOG_VALUE_SEPARATE)
         else
-            return data
+            return obj
         end
     end
 
