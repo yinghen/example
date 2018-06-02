@@ -4,8 +4,8 @@
 --- DateTime: 2018/6/2 15:48
 ---
 
-local LOG_VALUE_MAX_LENGTH = 100
-local LOG_VALUE_SEPARATE = 50
+local LOG_VALUE_MAX_LENGTH = 20
+local LOG_VALUE_SEPARATE = 10
 
 local _M = {}
 
