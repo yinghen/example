@@ -4,33 +4,31 @@
 --- DateTime: 2018/5/28 1:54
 ---
 local cjson = require("cjson")
---local json_util = require("example.util.json_util")
+local table_util = require("example.util.table_util")
 
 local _M = {}
+
+    -- API自定义请求头
+    local custom_headers = { "appkey", "method", "accessToken", "timestamp", "sign" }
 
     -- 所有的header
     _M.get_headers = function()
         local headers = ngx.req.get_headers()
-        print(cjson.encode(headers))
-        --ngx.say("headers begin", "<br/>")
-        ngx.say("Host : ", headers["Host"], "<br/>")
-        ngx.say("Host : ", headers.Host, "<br/>")
-        --ngx.say("user-agent : ", headers["user-agent"], "<br/>")
-        --ngx.say("user-agent : ", headers.user_agent, "<br/>")
-        --for k,v in pairs(headers) do
-        --    if type(v) == "table" then
-        --        ngx.say(k, " : ", table.concat(v, ","), "<br/>")
-        --    else
-        --        ngx.say(k, " : ", v, "<br/>")
-        --    end
-        --end
-        --ngx.say("headers end", "<br/>")
-        --ngx.say("<br/>")
+        return headers
     end
 
     -- 网关自定义的header
+    local hs = {}
     _M.get_custom_headers = function()
-        _M.get_headers();
+        local headers = _M.get_headers();
+        for k, v in pairs(headers) do
+            local flag = table_util.is_in_table(custom_headers, k)
+            if flag then
+                hs[k] = v
+            end
+        end
     end
+
+    ngx.say(cjson.encode(hs));
 
 return _M;
