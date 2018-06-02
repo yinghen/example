@@ -7,7 +7,7 @@
 local _M = {}
 
     -- Table中是否包含name
-    function _M.is_in_table(t, name)
+    _M.is_in_table = function(t, name)
         for _, v in pairs(t) do
             if v and name == v then
                 return true

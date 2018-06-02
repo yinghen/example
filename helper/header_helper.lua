@@ -18,19 +18,20 @@ local _M = {}
     end
 
     -- 网关自定义的header
-    local hs = {}
     _M.get_custom_headers = function()
         local headers = _M.get_headers();
+
+        -- 获取关注的header
+        local hs = {}
         for k, v in pairs(headers) do
-            ngx.say(k .. v)
             local flag = table_util.is_in_table(custom_headers, k)
-            ngx.say(flag)
             if flag then
                 hs[k] = v
             end
         end
+        ngx.say(cjson.encode(hs));
+        return hs;
     end
 
-    ngx.say(cjson.encode(hs));
 
 return _M;
