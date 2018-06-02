@@ -5,7 +5,11 @@
 ---
 
 local _M = {}
+
+    -- 获取请求参数
     _M.get_args = function()
+
+        ngx.req.read_body()
         local post_args = ngx.req.get_post_args()
 
         for k, v in pairs(post_args) do
