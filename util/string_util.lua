@@ -4,8 +4,8 @@
 --- DateTime: 2018/6/2 15:48
 ---
 
-local LOG_VALUE_MAX_LENGTH = 20
-local LOG_VALUE_SEPARATE = 10
+local LOG_VALUE_MAX_LENGTH = 100
+local LOG_VALUE_SEPARATE = 50
 
 local _M = {}
 
@@ -24,6 +24,7 @@ local _M = {}
         end
     end
 
+    -- 中文字符串截取有乱码现象（原因：中文占2个字节）
     _M.string_sep = function(obj)
         local length = string.len(obj);
         if length > LOG_VALUE_MAX_LENGTH then
