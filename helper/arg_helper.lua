@@ -12,7 +12,9 @@ local _M = {}
 
         ngx.req.read_body()
         local post_args = ngx.req.get_post_args()
-        ngx.say(cjson.encode(post_args))
+        for k, v in pairs(post_args) do
+            ngx.say(k, ": ", v, "<br/>")
+        end
 
     end
 
