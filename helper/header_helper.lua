@@ -24,7 +24,7 @@ local _M = {}
         for k, v in pairs(headers) do
             ngx.say(k .. v)
             local flag = table_util.is_in_table(custom_headers, k)
-            ngx.say(k .. flag)
+            ngx.say(flag)
             if flag then
                 hs[k] = v
             end
