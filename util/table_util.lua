@@ -20,6 +20,7 @@ local _M = {}
         for k,v in pairs(tab2) do
             tab1[k] = v;
         end
+        return tab1
     end
 
 return _M;
