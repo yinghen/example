@@ -5,17 +5,18 @@
 ---
 
 local LOG_VALUE_MAX_LENGTH = 100
-local LOG_VALUE_SEPARATE = 20
+local LOG_VALUE_SEPARATE = 50
 
 local _M = {}
 
+    -- 打印请求参数日志  长度截取 LOG_VALUE_SEPARATE .... LOG_VALUE_SEPARATE
     _M.to_log = function(data)
         if not data then
             return "";
         elseif "table" == type(data) then
             local content = {}
             for k , v in pairs(data) do
-                content[k] = M.string_sub(v)
+                content[k] = _M.string_sub(v)
             end
             return content;
         elseif "string" == type(data) then
