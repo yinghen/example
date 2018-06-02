@@ -11,14 +11,14 @@ local _M = {}
     -- 获取请求参数
     _M.get_args = function()
 
+        -- 某些请求参数放入URL中
+        local url_args = ngx.req.get_uri_args() or {}
+        --ngx.log(ngx.INFO,"url_args："..cjson.encode(url_args));
+
         -- POST 请求参数
         ngx.req.read_body()
         local post_args = ngx.req.get_post_args() or {}
         --ngx.log(ngx.INFO,"post_args："..cjson.encode(post_args));
-
-        -- POST 某些请求参数放入URL中
-        local url_args = ngx.req.get_uri_args() or {}
-        --ngx.log(ngx.INFO,"url_args："..cjson.encode(url_args));
 
         -- 请求
 
