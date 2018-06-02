@@ -8,13 +8,13 @@ local cjson = require("cjson")
 local _M = {}
 
     _M.get_uuid = function()
+        local random_seed = 1000000
         return os.date("%Y%m%d%H%M%S", os.time()) .. "-" .. (math.random(random_seed))
     end
 
     _M.init = function ()
 
-        local common_util = require("example.util.common_util")
-        ngx.ctx.request_start = common_util.now()
+        ngx.ctx.request_start = ngx.now() * 1000
         ngx.ctx.uuid = _M.get_uuid()
 
         -- 获取客户端IP
