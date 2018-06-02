@@ -7,7 +7,7 @@ local cjson = require("cjson")
 
 local _M = {}
 
-    M.get_uuid = function()
+    _M.get_uuid = function()
         return os.date("%Y%m%d%H%M%S", os.time()) .. "-" .. (math.random(random_seed))
     end
 
