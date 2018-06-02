@@ -3,15 +3,15 @@
 --- Created by luochen.
 --- DateTime: 2018/5/28 1:54
 ---
-
-local json_util = require("example.util.json_util")
+local cjson = require("cjson")
+--local json_util = require("example.util.json_util")
 
 local _M = {}
 
     -- 所有的header
     _M.get_headers = function()
         local headers = ngx.req.get_headers()
-        print(json_util.decode(headers))
+        print(cjson.encode(headers))
         --ngx.say("headers begin", "<br/>")
         ngx.say("Host : ", headers["Host"], "<br/>")
         ngx.say("Host : ", headers.Host, "<br/>")
