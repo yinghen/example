@@ -18,12 +18,12 @@ local _M = {}
         ngx.ctx.uuid = _M.get_uuid()
 
         -- 获取客户端IP
-        local ip = "1932.33.4.4.4"
-        ngx.ctx.client_ip = ip
+        local ip_helper = require("example.helper.ip_helper")
+        ngx.ctx.client_ip = ip_helper.get_client_ip()
 
         -- 获取请求头
-        local request_header = require("example.helper.header_helper")
-        local headers = request_header.get_custom_headers()
+        local request_helper = require("example.helper.header_helper")
+        local headers = request_helper.get_custom_headers()
         ngx.ctx.headers = headers
 
         -- 获取请求参数
