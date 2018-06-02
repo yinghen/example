@@ -3,6 +3,8 @@
 --- Created by luochen.
 --- DateTime: 2018/6/2 12:33
 ---
+local table_util = require("example.util.table_util")
+
 local _M = {}
 
     -- 获取请求参数
@@ -15,8 +17,8 @@ local _M = {}
         -- POST 某些请求参数放入URL中
         local url_args = ngx.req.get_uri_args() or {}
 
-
-        return post_args
+        local args = table_util.merge(url_args, post_args);
+        return args
     end
 
 return _M
