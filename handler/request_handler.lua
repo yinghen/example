@@ -13,6 +13,7 @@ local _M = {}
 
     _M.init = function ()
 
+        local common_util = require("example.util.common_util")
         ngx.ctx.request_start = common_util.now()
         ngx.ctx.uuid = _M.get_uuid()
 
