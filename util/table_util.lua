@@ -16,11 +16,11 @@ local _M = {}
     end
 
     -- 合并两个table，如果table中的key有冲突，那么使用后一个table的数据覆盖前一个table
-    function _M.merge(tab1, tab2)
-        for k,v in pairs(tab2) do
-            tab1[k] = v;
+    function _M.merge(tab, _tab)
+        for k,v in pairs(_tab) do
+            tab[k] = v;
         end
-        return tab1
+        return tab
     end
 
 return _M;

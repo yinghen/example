@@ -14,11 +14,11 @@ local _M = {}
         -- POST 请求参数
         ngx.req.read_body()
         local post_args = ngx.req.get_post_args() or {}
-        ngx.log(ngx.INFO,"post_args："..cjson.encode(post_args));
+        --ngx.log(ngx.INFO,"post_args："..cjson.encode(post_args));
 
         -- POST 某些请求参数放入URL中
         local url_args = ngx.req.get_uri_args() or {}
-        ngx.log(ngx.INFO,"url_args："..cjson.encode(url_args));
+        --ngx.log(ngx.INFO,"url_args："..cjson.encode(url_args));
         local args = table_util.merge(url_args, post_args);
 
         return args
