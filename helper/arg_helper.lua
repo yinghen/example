@@ -19,6 +19,9 @@ local _M = {}
         -- POST 某些请求参数放入URL中
         local url_args = ngx.req.get_uri_args() or {}
         --ngx.log(ngx.INFO,"url_args："..cjson.encode(url_args));
+
+        -- 请求
+
         local args = table_util.merge(url_args, post_args);
 
         return args
