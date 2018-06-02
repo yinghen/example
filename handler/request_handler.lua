@@ -31,7 +31,11 @@ local _M = {}
         local args = arg_helper.get_args();
         ngx.ctx.args = args
 
-        ngx.log(ngx.INFO, "accept request! uuid=", ngx.ctx.uuid, ", client ip=", ngx.ctx.client_ip, " headers=", cjson.encode(headers), ", args=", cjson.encode(args))
+
+        local string_util = require("example.util.string_util")
+        local args_log = string_util.to_log(args)
+
+        ngx.log(ngx.INFO, "accept request! uuid=", ngx.ctx.uuid, ", client ip=", ngx.ctx.client_ip, " headers=", cjson.encode(headers), ", args=", cjson.encode(args_log))
     end
 
 return _M;
