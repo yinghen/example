@@ -3,7 +3,6 @@
 --- Created by luochen.
 --- DateTime: 2018/5/28 1:54
 ---
-local cjson = require("cjson")
 local table_util = require("example.util.table_util")
 
 local _M = {}
@@ -29,9 +28,7 @@ local _M = {}
                 hs[k] = v
             end
         end
-        ngx.say(cjson.encode(hs));
         return hs;
     end
-
 
 return _M;
