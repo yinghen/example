@@ -16,18 +16,18 @@ local _M = {}
         elseif "table" == type(data) then
             local content = {}
             for k , v in pairs(data) do
-                content[k] = _M.string_sub(v)
+                content[k] = _M.string_sep(v)
             end
             return content;
         elseif "string" == type(data) then
-            return _M.string_sub(data)
+            return _M.string_sep(data)
         end
     end
 
-    _M.string_sub = function(obj)
+    _M.string_sep = function(obj)
         local length = string.len(obj);
         if length > LOG_VALUE_MAX_LENGTH then
-            return string.sub(data,1,LOG_VALUE_SEPARATE).."..."..string.sub(data,length-20,length)
+            return string.sub(data,1,LOG_VALUE_SEPARATE).."..."..string.sub(data,-1,-LOG_VALUE_SEPARATE)
         else
             return data
         end
