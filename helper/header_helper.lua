@@ -22,7 +22,9 @@ local _M = {}
     _M.get_custom_headers = function()
         local headers = _M.get_headers();
         for k, v in pairs(headers) do
+            ngx.say(k .. v)
             local flag = table_util.is_in_table(custom_headers, k)
+            ngx.say(k .. flag)
             if flag then
                 hs[k] = v
             end
