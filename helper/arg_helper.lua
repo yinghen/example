@@ -21,7 +21,6 @@ local _M = {}
         --ngx.log(ngx.INFO,"post_args："..cjson.encode(post_args));
 
         -- 请求
-
         local args = table_util.merge(url_args, post_args);
 
         return args
