@@ -10,6 +10,11 @@ local return_code = require("example.response.return_code")
 local _M = {}
 
     _M.call_proxy = function(proxy, servlet_path, args)
+
+        local uuid = ngx.ctx.uuid
+
+        local proxy_ctx = { orange_uuid = uuid }
+
         local options = {method = ngx.HTTP_POST, args = args, ctx = proxy_ctx }
         local response = ngx.location.capture(proxy, options)
 
