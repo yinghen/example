@@ -13,7 +13,7 @@ local _M = {}
 
         local uuid = ngx.ctx.uuid
 
-        ngx.INFO(uuid);
+        ngx.log(ngx.INFO, "请求UUID" .. uuid);
 
         local proxy_ctx = { orange_uuid = uuid }
 
