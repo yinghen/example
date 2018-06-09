@@ -17,6 +17,3 @@ request_handler.init();
 
 
 
-ngx.say("hello world");
-
-
