@@ -4,7 +4,7 @@
 --- DateTime: 2018/6/9 18:31
 ---
 
-
+local cjson = require("cjson")
 local return_code = require("example.response.return_code")
 
 local _M = {}
@@ -20,7 +20,7 @@ local _M = {}
             return true, response.body
         else
             --ngx.log(ngx.ERR, "call_proxy failed! uuid=", uuid, " cost=", cost, " status=", response.status, " body=", response.body)
-            return false, return_code.system_error
+            return false, cjson.encode(return_code.system_error)
         end
     end
 
