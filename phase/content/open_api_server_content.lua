@@ -5,11 +5,12 @@
 ---
 
 local proxy_handler = require("example.handler.proxy_handler")
-
+local response = require("example.response.response")
 
 local args = ngx.ctx.args
 
 local proxy = "/open_api_proxy_router"
 
-proxy_handler.call_proxy(proxy,args)
+local success, code, data = proxy_handler.call_proxy(proxy,args)
 
+response.say(success,data)
