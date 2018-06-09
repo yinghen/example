@@ -5,7 +5,7 @@
 ---
 
 
-local return_code = require("example.response.return_code")
+local system_error = "{ code = 1, message = '失败/处理请求出现异常.' }"
 
 local _M = {}
 
@@ -17,10 +17,10 @@ local _M = {}
         if response and ngx.HTTP_OK == response.status then
             --local result = string_util.to_log(response.body)
             --ngx.log(ngx.INFO, "call_proxy success! uuid=", uuid, " cost=", cost, " status=", response.status, result)
-            return true, return_code.success, response.body
+            return true, response.body
         else
             --ngx.log(ngx.ERR, "call_proxy failed! uuid=", uuid, " cost=", cost, " status=", response.status, " body=", response.body)
-            return false, return_code.system_error
+            return false, system_error
         end
     end
 
