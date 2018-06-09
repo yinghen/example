@@ -13,6 +13,8 @@ local _M = {}
 
         local uuid = ngx.ctx.uuid
 
+        ngx.INFO("请求uuid" .. uuid);
+
         local proxy_ctx = { orange_uuid = uuid }
 
         local options = {method = ngx.HTTP_POST, args = args, ctx = proxy_ctx }
