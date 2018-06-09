@@ -13,6 +13,9 @@ local _M = {}
         local options = {method = ngx.HTTP_POST, args = args, ctx = proxy_ctx }
         local response = ngx.location.capture(proxy, options)
 
+        -- 返回结果的header信息
+        ngx.ctx.response_headers = response.header
+
         -- 处理返回结果
         if response and ngx.HTTP_OK == response.status then
             --local result = string_util.to_log(response.body)
