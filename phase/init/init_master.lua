@@ -9,7 +9,7 @@ local context_builder = require("example.phase.init.context_builder")
 
 local _M = {}
     _M.init = function()
-        local config_path = "/home/luochen/example/config/nginx-gateway.conf"
+        local config_path = "/home/luochen/example/conf/nginx-gateway.conf"
         context_builder.init(config_path);
     end
 return _M
