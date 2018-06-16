@@ -10,7 +10,7 @@
 --local config_path = "/home/luochen/example/conf/nginx-gateway.conf"
 --context_builder.init(config_path)
 
-
+print("2222222222222222222222222222222")
 
 ngx.log(ngx.INFO,"========================================================")
 
