@@ -5,14 +5,14 @@
 ---
 
 
---local context_builder = require("example.phase.init.context_builder")
---
---local config_path = "/home/luochen/example/conf/nginx-gateway.conf"
---context_builder.init(config_path)
+local context_builder = require("example.phase.init.context_builder")
 
-print("2222222222222222222222222222222")
+local config_path = "/home/luochen/example/conf/nginx-gateway.conf"
+context_builder.init(config_path)
 
-ngx.log(ngx.INFO,"========================================================")
+
+
+
 
 
 
