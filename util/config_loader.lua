@@ -8,6 +8,7 @@ local _M = {}
             ngx.log(ngx.ERR, "No configuration file at: ", config_path)
             return
         end
+        ngx.log(ngx.INFO, "this is configuration file", cjson.decode(config))
         return cjson.decode(config)
     end
 return _M
