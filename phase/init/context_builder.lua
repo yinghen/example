@@ -10,6 +10,8 @@ local _context = {}
     _context.init = function(config_path)
         local config = config_loader.load(config_path)
 
+        ngx.log(ngx.INFO,"=============================================k")
+
         print("---------------- " .. cjson.encode(config))
         --ngx.log(ngx.INFO,"config_path = ",config_path)
 
