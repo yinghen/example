@@ -3,9 +3,11 @@ local cjson = require("cjson")
 
 local _M = {}
     function _M.load(config_path)
-        local config_contents = io.read_file(config_path)
-        if config_contents then
-            return cjson.decode(config_contents)
+        local config = io.read_file(config_path)
+        if not config then
+            ngx.log(ngx.ERR, "No configuration file at: ", config_path)
+            return
         end
+        return cjson.decode(config)
     end
 return _M
