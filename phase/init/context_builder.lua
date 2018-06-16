@@ -7,8 +7,7 @@ local config_loader = require("example.util.config_loader")
 
 local _context = {}
     _context.init = function(config_path)
-        local config_file = ngx.config.prefix() .. config_path
-        local config = config_loader.load(config_file)
+        local config = config_loader.load(config_path)
 
         ------------------- 初始化guahao的上下文环境  -------------------
         -- 初始化缓存
