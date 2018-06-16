@@ -8,7 +8,7 @@ local cjson = require("cjson")
 
 local _context = {}
     _context.init = function(config_path)
-        local config = config_loader.load(config_path)
+        --local config = config_loader.load(config_path)
         ngx.log(ngx.INFO,"config_path = ",config_path)
 
         ------------------- 初始化guahao的上下文环境  -------------------
