@@ -4,10 +4,12 @@
 --- DateTime: 2018/6/16 9:46
 ---
 local config_loader = require("example.util.config_loader")
+local cjson = require("cjson")
 
 local _context = {}
     _context.init = function(config_path)
         local config = config_loader.load(config_path)
+        ngx.log(ngx.INFO,"config_path = ",config_path,"  config=", cjson.decode(config))
 
         ------------------- 初始化guahao的上下文环境  -------------------
         -- 初始化缓存
