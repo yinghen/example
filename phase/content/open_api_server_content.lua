@@ -13,4 +13,9 @@ local proxy = "/open_api_proxy_router"
 
 -- 远程请求
 local success, data = proxy_handler.call_proxy(proxy,args)
+
+local global_config = ngx.shared.global_config;
+
+print(global_config:get("redis_config"))
+
 response.say(success,data)
